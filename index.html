@@ -204,7 +204,7 @@
   <main class="card">
     <h1>Only for you ❤️</h1>
     <p class="subtitle">
-      Type your mood, my love. Whatever you feel today, there is a small letter waiting for you here.
+      Type your mood, my Cutie. Whatever you feel today, there is a small letter waiting for you here.
     </p>
 
     <div class="input-row">
@@ -218,108 +218,336 @@
 
     <section class="letter" id="letterBox"></section>
 
-    <p class="footer-note">A tiny secret corner made just for Minnie.</p>
+    <p class="footer-note">A tiny secret corner made just for Queen.</p>
   </main>
 
   <script>
     const letters = {
-      happy: {
-        title: "When you are happy",
-        text: `My Minnie,
+      miss: {
+        title: "When you miss me",
+        text: `My Queen 👑,
 
-If you are smiling right now, then I hope that smile stays on your face for a very long time. I hope today feels soft, easy, and beautiful for you.
+Yeah yeah… I already know what you’re going to say.
+You’re going to say you don’t miss me.
 
-I love knowing that you are happy, because your happiness honestly makes my whole day better too. Even if I am not next to you, imagine me annoying you, teasing you, and smiling like an idiot because my girl is happy.
+But I know you better than that 😌
 
-Keep smiling, my love. You look the prettiest when your heart feels light.`
+You may act like you don’t miss me some days…
+but somewhere inside, I know you do 🥺
+Maybe you won’t admit it… maybe you’ll pretend you’re fine…
+but your jester knows the truth.
+
+And me?
+
+I don’t even try to hide it.
+I miss you everywhere… random moments… quiet places…
+even when I’m doing something normal and suddenly wishing you were next to me.
+
+Some things just feel incomplete without you.
+
+I’ll just say it properly.
+
+I miss you. A lot ❤️
+
+So go on… act like you don’t miss me…
+your jester knows better 😌`
       },
 
       sad: {
-        title: "When you are sad",
-        text: `My love,
+        title: "When you’re sad",
+        text: `My Queen 🤍,
 
-Come here first. Take one deep breath. You do not have to be strong every single second. I know college, people, stress, and everything around you can feel heavy sometimes.
+I know today feels heavy.
 
-But listen, this feeling is not bigger than you. You are so much stronger than you think, even on the days where you feel small. I am proud of you for trying, even when your heart feels tired.
+And I know this isn’t one of your easy days.
 
-I wish I could sit beside you, hold your hand, and make the whole world shut up for a while. But until then, remember this: you are not alone. I am with you. Always.`
+You don’t have to act strong right now.
+You don’t have to pretend like everything is okay.
+
+Even the strongest people get tired sometimes…
+even the strongest people feel low.
+
+Whatever it is — college, people, home, or just everything piling up —
+you don’t have to carry it all by yourself.
+
+And yeah… I know myself 😭
+My mind will automatically start thinking how to fix everything…
+how to solve your problem… how to make it better somehow.
+
+But with you…
+
+I don’t always want to fix it immediately.
+
+Sometimes I just want to sit with you…
+stay close…
+and make sure you don’t feel alone 🥺
+
+You don’t have to rush to feel okay.
+You don’t have to explain everything.
+
+Just know I’m here.
+
+You’ll get through this.
+You always do.
+
+And while you’re getting through it…
+I’m right here.
+
+Your jester 🤍`
+      },
+
+      happy: {
+        title: "When you’re happy",
+        text: `My ketchup packet 😭❤️,
+
+Yeah yeah I know… you hate that name.
+But I had to start like that.
+
+If you’re happy right now… I’m already smiling like an idiot here 😌
+
+This is my favorite version of you…
+smiling… glowing… laughing… just being fully you without overthinking everything.
+
+You deserve this 🥺
+You deserve soft days… happy moments… peace in your heart.
+
+So don’t question it.
+Don’t overthink it.
+
+Just enjoy it.
+
+Stay like this for as long as you can, my Queen ❤️
+
+Your jester is definitely enjoying this version of you 😌`
+      },
+
+      alone: {
+        title: "When you feel alone",
+        text: `My Queen 🤍,
+
+I know there are moments where everything feels quiet…
+
+Too quiet.
+
+Like no one really understands…
+like you’re just carrying things silently by yourself.
+
+But listen to me properly.
+
+You are not alone.
+
+Not just when things are easy…
+not just when you’re happy…
+
+Even now… you still have me.
+
+You have someone who chooses you.
+Someone who listens.
+Someone who stays.
+
+Even if everything around you feels distant…
+I’m still right here 🥺
+
+You don’t have to carry this alone anymore 🤍`
       },
 
       bored: {
-        title: "When you are bored",
-        text: `My bored little baby,
+        title: "When you feel bored",
+        text: `My bored little Peppa Nigga 😭,
 
-So you came here because you had nothing better to do? Very nice. I am honoured to be your emergency entertainment service.
+So the world got boring without your jester ah?
 
-Since you are bored, your task is simple: smile for me once, drink some water, and then text me something completely random. Even one dumb message is enough, because honestly I love even your nonsense.
+Expected 😌
 
-Also, I know you are pretending you do not miss me right now. It is okay. I know the truth.`
+Go think about us for a second…
+all the random days… the stupid talks… the food…
+the laughing for no reason 😂
+
+We don’t even need anything big.
+
+When it’s us… even normal things become special.
+
+So if you’re bored right now, you have two options:
+
+Think about us and smile like an idiot… 😌
+or stop acting and text me.
+
+Because clearly… I’m still your best entertainment 😤❤️`
       },
 
       tired: {
-        title: "When you are tired",
-        text: `My baby,
+        title: "When you’re tired",
+        text: `My Queen 👑,
 
-You did enough today. Even if you feel like you did not, I promise you did. You carried yourself through the day, and that itself matters.
+Aiyo… today really drained you huh 🥺
 
-Please rest for me. Stop fighting your own mind for a little while. You deserve sleep, peace, food, comfort, and a break from everything that keeps pulling at you.
+I can already imagine you acting like you’re fine…
+but I know when you’re like this… everything feels heavier than usual.
 
-If I was there, I would tell you to lie down, stop overthinking, and let me take care of you for a bit. For now, close your eyes and imagine I am right there.`
+So listen properly.
+
+You don’t have to do everything today.
+You don’t have to push yourself like crazy.
+
+You did enough.
+
+Even if your brain says “no you didn’t”… ignore it 😤
+It’s lying.
+
+If I was there, I’d force you to sit down…
+maybe irritate you a bit…
+then make sure you actually rest properly 😌
+
+So take it easy baby.
+
+Your jester is right here 🤍`
+      },
+
+      sleepy: {
+        title: "When you’re sleepy",
+        text: `My sleepy Snorlax 😴❤️,
+
+It’s almost 10:30 ah…
+
+Which means you’re either half asleep…
+or pretending like you’re not tired and still scrolling 😑
+
+I know you…
+
+“just 5 more minutes”
+“one last thing”
+“okay now I’ll sleep”
+
+And somehow you’re still awake 😭
+
+Go sleep.
+
+Yes I’m serious 😤
+
+Phone aside.
+Eyes closed.
+No overthinking.
+
+This is your peaceful 10:30 sleep… don’t spoil it 😌
+
+If I was there, I’d annoy you first…
+then pull you close and make sure you actually sleep like the Snorlax you are 🥺❤️
+
+Sleep properly okay?
+
+Your jester will be right here when you wake up 🤍`
       },
 
       angry: {
-        title: "When you are angry",
-        text: `My angry queen,
+        title: "When you’re angry",
+        text: `My angry Queen 😤,
 
-Okay first, breathe. Second, please do not kill anyone. Third, I am on your side by default unless you are being too much, in which case I will still be on your side but silently scared.
+Okay first… breathe.
 
-Whatever happened, do not let it ruin your whole day. You have too pretty of a heart to let random things steal your peace.
+Second… don’t kill anyone.
 
-Come rant to me. I will listen. I may give advice, I may say something stupid, but I will always stay.`
-      },
+Third… I’m on your side by default 😌
 
-      miss: {
-        title: "When you miss me",
-        text: `My Minnie,
+I know something annoyed you…
+and yeah, sometimes people really test your patience.
 
-I know you may not always admit it, but I know you miss me. And just for the record, I miss you more. Everywhere I go, something reminds me of you.
+But don’t let it ruin your whole day.
 
-I miss your voice, your face, your little moods, your silence, your stories, and even the way you act like you do not miss me that much.
+You have too good of a heart to let random things mess with your peace 🥺
 
-So whenever you miss me, come back here and remember this: I am probably missing you at the exact same time, maybe even more.`
+Come rant to me.
+
+Say everything.
+
+I’ll listen… I might say something stupid…
+but I’m not going anywhere 🤍`
       },
 
       overthinking: {
-        title: "When you are overthinking",
-        text: `My love,
+        title: "When you’re overthinking",
+        text: `My love 🤍,
 
-Stop for one second. Your mind is making everything louder than it needs to be. Not every thought is true, and not every fear deserves your energy.
+Stop for one second.
 
-You are loved. You are wanted. You are important to me. Nothing about you is too much for me.
+Your mind is making everything louder than it needs to be.
 
-Whatever your brain is saying right now, let my words be louder: I choose you. I care about you. I am not going anywhere.`
+Not every thought is true.
+Not every fear deserves your energy.
+
+And listen… I’m saying this as someone who overthinks more than you 😭
+
+So I know exactly how your brain goes from 0 to 100 for no reason.
+
+So don’t compete with me in overthinking…
+I’ll win easily 😌
+
+But seriously…
+
+Not everything your mind tells you is real.
+
+So listen to me instead.
+
+You are loved.
+You are wanted.
+You matter to me.
+
+Nothing about you is “too much” for me 🥺
+
+So whatever your brain is saying right now…
+
+Let my voice be louder.
+
+I choose you. Always 🤍`
       },
 
       loved: {
         title: "When you want to feel loved",
-        text: `My darling,
+        text: `My Queen 👑,
 
-You are loved in a very real way. Not only when you are happy, not only when you are easy to understand, not only when everything is perfect.
+You are loved.
 
-I love you when you are quiet, when you are stressed, when you are silly, when you are dramatic, when you miss me but refuse to say it, and when you are just being you.
+Not just on your good days…
+not just when you’re happy…
 
-You are my favourite person. My Minnie. My baby. My peace. My little Peppa Pig sometimes. And I love you more than I know how to properly explain.`
+I love you when you’re quiet…
+when you’re stressed…
+when you’re dramatic 😭
+when you act like you don’t miss me 😑
+
+I love every version of you.
+
+You’re my favorite person.
+My peace.
+My everything.
+
+And yeah…
+
+You receive my love ❤️
+I receive physical abuse 🤕
+
+Fair deal ah? 😌`
       },
 
       default: {
         title: "For whatever mood this is",
-        text: `My love,
+        text: `My Queen 👑,
 
-I may not know exactly what you are feeling right now, but I know one thing clearly: I love you through it.
+I don’t know exactly what mood this is…
+but I know one thing properly.
 
-Good mood, bad mood, confused mood, silent mood, random mood — you are still my girl, and you still have me.
+Whatever you’re feeling right now,
+you still have me.
 
-So take this as your small reminder: you are loved, you are missed, and you are very, very special to me.`
+Good mood, bad mood, random mood, silent mood,
+Peppa Nigga mood, Snorlax mood… anything 😭
+
+You’re still my Queen.
+And I’m still your jester.
+
+So take this as your reminder:
+you are loved,
+you are missed,
+and you’re very very special to me ❤️`
       }
     };
 
@@ -329,17 +557,20 @@ So take this as your small reminder: you are loved, you are missed, and you are 
 
       let selected = letters.default;
 
-      if (input.includes("happy") || input.includes("good") || input.includes("excited")) selected = letters.happy;
-      if (input.includes("sad") || input.includes("cry") || input.includes("upset")) selected = letters.sad;
-      if (input.includes("bored") || input.includes("boring")) selected = letters.bored;
-      if (input.includes("tired") || input.includes("sleepy") || input.includes("exhausted")) selected = letters.tired;
-      if (input.includes("angry") || input.includes("mad") || input.includes("annoyed")) selected = letters.angry;
       if (input.includes("miss") || input.includes("missing")) selected = letters.miss;
-      if (input.includes("overthink") || input.includes("anxious") || input.includes("scared")) selected = letters.overthinking;
-      if (input.includes("love") || input.includes("loved") || input.includes("lonely")) selected = letters.loved;
+      else if (input.includes("sad") || input.includes("cry") || input.includes("upset") || input.includes("low") || input.includes("not okay") || input.includes("down")) selected = letters.sad;
+      else if (input.includes("happy") || input.includes("good") || input.includes("excited") || input.includes("smile")) selected = letters.happy;
+      else if (input.includes("alone") || input.includes("lonely") || input.includes("left out")) selected = letters.alone;
+      else if (input.includes("bored") || input.includes("boring")) selected = letters.bored;
+      else if (input.includes("sleepy") || input.includes("sleep") || input.includes("bed")) selected = letters.sleepy;
+      else if (input.includes("tired") || input.includes("exhausted") || input.includes("drained")) selected = letters.tired;
+      else if (input.includes("angry") || input.includes("mad") || input.includes("annoyed") || input.includes("irritated")) selected = letters.angry;
+      else if (input.includes("overthink") || input.includes("anxious") || input.includes("scared") || input.includes("worried") || input.includes("fear")) selected = letters.overthinking;
+      else if (input.includes("love") || input.includes("loved") || input.includes("unloved") || input.includes("care")) selected = letters.loved;
 
       letterBox.innerHTML = `<h2>${selected.title}</h2><p>${selected.text}</p>`;
       letterBox.style.display = "block";
+      letterBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
 
     document.getElementById("moodInput").addEventListener("keydown", function(event) {
