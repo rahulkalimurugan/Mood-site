@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Only For You ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background:
+        radial-gradient(circle at top, rgba(255, 105, 180, 0.25), transparent 35%),
+        linear-gradient(135deg, #09000f, #16001f, #000000);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      color: rgba(255, 182, 193, 0.45);
+      animation: floatUp 8s linear infinite;
+      font-size: 18px;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(110vh) scale(0.7);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-20vh) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 560px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 26px;
+      padding: 28px 22px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 0 35px rgba(255, 75, 145, 0.35);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      color: rgba(255, 255, 255, 0.78);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    input {
+      flex: 1;
+      border: none;
+      outline: none;
+      border-radius: 999px;
+      padding: 14px 16px;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.14);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #ff5fa2, #ff2f75);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(255, 47, 117, 0.35);
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    .mood-hints {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.62);
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .letter {
+      display: none;
+      margin-top: 18px;
+      padding: 22px;
+      text-align: left;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      animation: fadeIn 0.7s ease forwards;
+      line-height: 1.75;
+      font-size: 1.02rem;
+      white-space: pre-line;
+    }
+
+    .letter h2 {
+      text-align: center;
+      margin-top: 0;
+      font-size: 1.45rem;
+      color: #ffd1e3;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 14px;
+        align-items: flex-start;
+        padding-top: 42px;
+      }
+
+      .card {
+        padding: 24px 17px;
+        border-radius: 24px;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+
+      .input-row {
+        flex-direction: column;
+      }
+
+      button, input {
+        width: 100%;
+      }
+
+      .letter {
+        font-size: 0.98rem;
+        padding: 19px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <main class="card">
+    <h1>Only for you ❤️</h1>
+    <p class="subtitle">
+      Type your mood, my love. Whatever you feel today, there is a small letter waiting for you here.
+    </p>
+
+    <div class="input-row">
+      <input id="moodInput" type="text" placeholder="happy, sad, bored, miss me..." />
+      <button onclick="showLetter()">Open</button>
+    </div>
+
+    <div class="mood-hints">
+      Try: happy • sad • bored • tired • angry • miss me • overthinking • loved
+    </div>
+
+    <section class="letter" id="letterBox"></section>
+
+    <p class="footer-note">A tiny secret corner made just for Minnie.</p>
+  </main>
+
+  <script>
+    const letters = {
+      happy: {
+        title: "When you are happy",
+        text: `My Minnie,
+
+If you are smiling right now, then I hope that smile stays on your face for a very long time. I hope today feels soft, easy, and beautiful for you.
+
+I love knowing that you are happy, because your happiness honestly makes my whole day better too. Even if I am not next to you, imagine me annoying you, teasing you, and smiling like an idiot because my girl is happy.
+
+Keep smiling, my love. You look the prettiest when your heart feels light.`
+      },
+
+      sad: {
+        title: "When you are sad",
+        text: `My love,
+
+Come here first. Take one deep breath. You do not have to be strong every single second. I know college, people, stress, and everything around you can feel heavy sometimes.
+
+But listen, this feeling is not bigger than you. You are so much stronger than you think, even on the days where you feel small. I am proud of you for trying, even when your heart feels tired.
+
+I wish I could sit beside you, hold your hand, and make the whole world shut up for a while. But until then, remember this: you are not alone. I am with you. Always.`
+      },
+
+      bored: {
+        title: "When you are bored",
+        text: `My bored little baby,
+
+So you came here because you had nothing better to do? Very nice. I am honoured to be your emergency entertainment service.
+
+Since you are bored, your task is simple: smile for me once, drink some water, and then text me something completely random. Even one dumb message is enough, because honestly I love even your nonsense.
+
+Also, I know you are pretending you do not miss me right now. It is okay. I know the truth.`
+      },
+
+      tired: {
+        title: "When you are tired",
+        text: `My baby,
+
+You did enough today. Even if you feel like you did not, I promise you did. You carried yourself through the day, and that itself matters.
+
+Please rest for me. Stop fighting your own mind for a little while. You deserve sleep, peace, food, comfort, and a break from everything that keeps pulling at you.
+
+If I was there, I would tell you to lie down, stop overthinking, and let me take care of you for a bit. For now, close your eyes and imagine I am right there.`
+      },
+
+      angry: {
+        title: "When you are angry",
+        text: `My angry queen,
+
+Okay first, breathe. Second, please do not kill anyone. Third, I am on your side by default unless you are being too much, in which case I will still be on your side but silently scared.
+
+Whatever happened, do not let it ruin your whole day. You have too pretty of a heart to let random things steal your peace.
+
+Come rant to me. I will listen. I may give advice, I may say something stupid, but I will always stay.`
+      },
+
+      miss: {
+        title: "When you miss me",
+        text: `My Minnie,
+
+I know you may not always admit it, but I know you miss me. And just for the record, I miss you more. Everywhere I go, something reminds me of you.
+
+I miss your voice, your face, your little moods, your silence, your stories, and even the way you act like you do not miss me that much.
+
+So whenever you miss me, come back here and remember this: I am probably missing you at the exact same time, maybe even more.`
+      },
+
+      overthinking: {
+        title: "When you are overthinking",
+        text: `My love,
+
+Stop for one second. Your mind is making everything louder than it needs to be. Not every thought is true, and not every fear deserves your energy.
+
+You are loved. You are wanted. You are important to me. Nothing about you is too much for me.
+
+Whatever your brain is saying right now, let my words be louder: I choose you. I care about you. I am not going anywhere.`
+      },
+
+      loved: {
+        title: "When you want to feel loved",
+        text: `My darling,
+
+You are loved in a very real way. Not only when you are happy, not only when you are easy to understand, not only when everything is perfect.
+
+I love you when you are quiet, when you are stressed, when you are silly, when you are dramatic, when you miss me but refuse to say it, and when you are just being you.
+
+You are my favourite person. My Minnie. My baby. My peace. My little Peppa Pig sometimes. And I love you more than I know how to properly explain.`
+      },
+
+      default: {
+        title: "For whatever mood this is",
+        text: `My love,
+
+I may not know exactly what you are feeling right now, but I know one thing clearly: I love you through it.
+
+Good mood, bad mood, confused mood, silent mood, random mood — you are still my girl, and you still have me.
+
+So take this as your small reminder: you are loved, you are missed, and you are very, very special to me.`
+      }
+    };
+
+    function showLetter() {
+      const input = document.getElementById("moodInput").value.toLowerCase().trim();
+      const letterBox = document.getElementById("letterBox");
+
+      let selected = letters.default;
+
+      if (input.includes("happy") || input.includes("good") || input.includes("excited")) selected = letters.happy;
+      if (input.includes("sad") || input.includes("cry") || input.includes("upset")) selected = letters.sad;
+      if (input.includes("bored") || input.includes("boring")) selected = letters.bored;
+      if (input.includes("tired") || input.includes("sleepy") || input.includes("exhausted")) selected = letters.tired;
+      if (input.includes("angry") || input.includes("mad") || input.includes("annoyed")) selected = letters.angry;
+      if (input.includes("miss") || input.includes("missing")) selected = letters.miss;
+      if (input.includes("overthink") || input.includes("anxious") || input.includes("scared")) selected = letters.overthinking;
+      if (input.includes("love") || input.includes("loved") || input.includes("lonely")) selected = letters.loved;
+
+      letterBox.innerHTML = `<h2>${selected.title}</h2><p>${selected.text}</p>`;
+      letterBox.style.display = "block";
+    }
+
+    document.getElementById("moodInput").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        showLetter();
+      }
+    });
+
+    const heartsContainer = document.getElementById("hearts");
+
+    for (let i = 0; i < 22; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "♡";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDelay = Math.random() * 8 + "s";
+      heart.style.animationDuration = 6 + Math.random() * 6 + "s";
+      heart.style.fontSize = 14 + Math.random() * 18 + "px";
+      heartsContainer.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
